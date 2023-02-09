@@ -6,13 +6,13 @@ import (
 )
 
 type RespData struct {
-	Code    RespCode
-	Message string
-	Data    interface{}
+	Code    RespCode    `json:"code"`
+	Message string      `json:"message"`
+	Data    interface{} `json:"data,omitempty"`
 }
 
 func RespError(c *gin.Context, code RespCode, data interface{}) {
-	c.JSON(http.StatusOK, RespData{
+	c.JSON(http.StatusOK, &RespData{
 		Code:    code,
 		Message: code.getMapping(),
 		Data:    data,
@@ -20,7 +20,7 @@ func RespError(c *gin.Context, code RespCode, data interface{}) {
 }
 
 func RespSuccess(c *gin.Context, data interface{}) {
-	c.JSON(http.StatusOK, RespData{
+	c.JSON(http.StatusOK, &RespData{
 		Code:    CodeSuccess,
 		Message: CodeSuccess.getMapping(),
 		Data:    data,
