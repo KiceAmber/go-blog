@@ -1,10 +1,16 @@
-create database `go_blog`;
+CREATE DATABASE `go_blog`;
 
-use `go_blog`;
+USE `go_blog`;
 
-create table `user` (
-    `id` bigint(20) not null auto_increment primary key,
-    `username` varchar(64) not null,
-    `password` varchar(20) not null,
-    unique index `idx_username`(`username`)
-) engine=innodb;
+CREATE TABLE `user` (
+        `id` BIGINT(10) AUTO_INCREMENT NOT NULL PRIMARY KEY,
+        `user_id` BIGINT(20) NOT NULL,
+        `username` VARCHAR(32) NOT NULL UNIQUE,
+        `password` VARCHAR(20) NOT NULL,
+        `gender` TINYINT(2) NOT NULL DEFAULT 0,
+        `email` VARCHAR(30),
+        `create_time` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+        `update_time` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+        UNIQUE INDEX `idx_user_id` (`user_id`),
+        UNIQUE INDEX `idx_username` (`username`)
+) ENGINE=INNODB DEFAULT CHARSET=utf8mb4 collate=utf8mb4_general_ci;
