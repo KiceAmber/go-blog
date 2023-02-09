@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"go-blog/config"
+	"go-blog/controller"
 	"go-blog/log"
 	"net/http"
 	"os"
@@ -19,9 +20,13 @@ func Init() *gin.Engine {
 	r := gin.New()
 	r.Use(log.GinLogger(), log.GinRecovery(true))
 
+	// 测试接口
 	r.GET("/index", func(c *gin.Context) {
 		c.String(http.StatusOK, config.Conf.Version)
 	})
+
+	// 用户注册接口
+	r.POST("/signup", controller.Signup)
 
 	// 错误路由
 	r.NoRoute(func(c *gin.Context) {
