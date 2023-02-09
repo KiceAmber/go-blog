@@ -5,6 +5,7 @@ import (
 	"go-blog/config"
 	"go-blog/dao/mysql"
 	"go-blog/log"
+	"go-blog/pkg/snowflake"
 	"go-blog/router"
 	"os"
 
@@ -24,31 +25,37 @@ func main() {
 		return
 	}
 
-	// 2. 初始化日志
+	// 初始化日志
 	if err := log.Init(config.Conf.LogConfig); err != nil {
-		fmt.Printf("init logger failed, err:%v\n", err)
+		fmt.Printf("init log failed, err:%v\n", err)
 		return
 	}
 	defer zap.L().Sync()
-	zap.L().Debug("logger init success...")
+	zap.L().Debug("log init success...")
 
-	// 3. 初始化 MySQL 连接
+	// 初始化 MySQL 连接
 	if err := mysql.Init(config.Conf.MysqlConfig); err != nil {
 		fmt.Printf("init mysql failed, err:%v\n", err)
 		return
 	}
 	defer mysql.Close()
 
-	// 4. 初始化 Redis 连接
+	// 初始化 Redis 连接
 	// if err := redis.Init(config.Conf.RedisConfig); err != nil {
 	// 	fmt.Printf("init redis failed, err:%v\n", err)
 	// 	return
 	// }
 	// defer redis.Close()
 
-	// 5. 注册路由 router
+	// 初始化雪花算法
+	if err := snowflake.Init(config.Conf.StartTime, config.Conf.MachineID); err != nil {
+		fmt.Printf("init snowflake failed, err:%v\n", err)
+		return
+	}
+
+	// 注册路由 router
 	r := router.Init()
 
-	// 6. 启动服务(优雅关机)
+	// 启动服务(优雅关机)
 	router.Setup(r)
 }

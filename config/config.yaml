@@ -2,6 +2,8 @@ name: "go-blog"
 mode: "dev"
 port: 3939
 version: "v0.1.1"
+start_time: "2023-01-01"
+machine_ID: 393939
 
 # 日志配置
 log:
