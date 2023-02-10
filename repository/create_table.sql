@@ -6,7 +6,7 @@ CREATE TABLE `user` (
         `id` BIGINT(10) AUTO_INCREMENT NOT NULL PRIMARY KEY,
         `user_id` BIGINT(20) NOT NULL,
         `username` VARCHAR(32) NOT NULL UNIQUE,
-        `password` VARCHAR(20) NOT NULL,
+        `password` VARCHAR(64) NOT NULL,
         `gender` TINYINT(2) NOT NULL DEFAULT 0,
         `email` VARCHAR(30),
         `create_time` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
