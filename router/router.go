@@ -27,6 +27,8 @@ func Init() *gin.Engine {
 
 	// 用户注册接口
 	r.POST("/signup", controller.Signup)
+	// 用户登录接口
+	r.GET("/login", controller.Login)
 
 	// 错误路由
 	r.NoRoute(func(c *gin.Context) {

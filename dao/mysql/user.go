@@ -8,6 +8,13 @@ import (
 
 const secret = "Amber"
 
+// encryptPwd 密码加密
+func encryptPwd(password string) string {
+	h := md5.New()
+	h.Write([]byte(secret))
+	return hex.EncodeToString(h.Sum([]byte(password)))
+}
+
 func CheckUserExist(username string) (err error) {
 	sql := "select username, password from user where username = ?"
 	rows, err := db.Query(sql, username)
@@ -26,9 +33,9 @@ func CreateUser(user *model.User) (err error) {
 	return
 }
 
-// encryptPwd 密码加密
-func encryptPwd(password string) string {
-	h := md5.New()
-	h.Write([]byte(secret))
-	return hex.EncodeToString(h.Sum([]byte(password)))
+func QueryUser(username string, password string) (user model.User, err error) {
+	password = encryptPwd(password)
+	sql := "select user_id, username, password from user where username = ? and password = ?"
+	err = db.Get(&user, sql, username, password)
+	return
 }
