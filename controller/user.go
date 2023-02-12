@@ -44,5 +44,6 @@ func Login(c *gin.Context) {
 	RespSuccess(c, gin.H{
 		"user_id":  fmt.Sprintf("%d", user.UserID),
 		"username": user.Username,
+		"token":    user.Token,
 	})
 }

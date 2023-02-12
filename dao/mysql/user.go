@@ -33,9 +33,10 @@ func CreateUser(user *model.User) (err error) {
 	return
 }
 
-func QueryUser(username string, password string) (user model.User, err error) {
+func QueryUser(username string, password string) (user *model.User, err error) {
+	user = new(model.User)
 	password = encryptPwd(password)
 	sql := "select user_id, username, password from user where username = ? and password = ?"
-	err = db.Get(&user, sql, username, password)
+	err = db.Get(user, sql, username, password)
 	return
 }
