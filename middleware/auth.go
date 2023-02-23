@@ -1,10 +1,11 @@
 package middleware
 
 import (
-	"github.com/gin-gonic/gin"
 	"go-blog/controller"
 	"go-blog/pkg/jwt"
 	"strings"
+
+	"github.com/gin-gonic/gin"
 )
 
 func JWTAuthMiddleware() func(c *gin.Context) {

@@ -20,10 +20,18 @@ func Init() *gin.Engine {
 	r := gin.New()
 	r.Use(log.GinLogger(), log.GinRecovery(true))
 
+	v1 := r.Group("/version1")
+
 	// 用户注册接口
-	r.POST("/signup", controller.Signup)
+	v1.POST("/signup", controller.Signup)
 	// 用户登录接口
-	r.GET("/login", controller.Login)
+	v1.GET("/login", controller.Login)
+
+	// 认证中间件
+	//v1.Use(middleware.JWTAuthMiddleware())
+	{
+		v1.GET("/articles", controller.GetAllArticle)
+	}
 
 	// 错误路由
 	r.NoRoute(func(c *gin.Context) {
