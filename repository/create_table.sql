@@ -31,5 +31,5 @@ CREATE TABLE `article` (
         `author_id` BIGINT(20) NOT NULL,
         `create_time` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
         `update_time` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-        UNIQUE INDEX `idx_title` (`title`)
+        INDEX `idx_title` (`title`)
 ) ENGINE=INNODB DEFAULT CHARSET=utf8mb4 collate=utf8mb4_general_ci;
