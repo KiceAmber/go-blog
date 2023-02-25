@@ -6,6 +6,7 @@ import (
 	"go-blog/config"
 	"go-blog/controller"
 	"go-blog/log"
+	"go-blog/middleware"
 	"net/http"
 	"os"
 	"os/signal"
@@ -28,9 +29,10 @@ func Init() *gin.Engine {
 	v1.GET("/login", controller.Login)
 
 	// 认证中间件
-	//v1.Use(middleware.JWTAuthMiddleware())
+	v1.Use(middleware.JWTAuthMiddleware())
 	{
 		v1.GET("/articles", controller.GetAllArticle)
+		v1.POST("/article", controller.CreateArticle)
 	}
 
 	// 错误路由

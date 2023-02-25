@@ -2,9 +2,10 @@ package controller
 
 import (
 	"fmt"
-	"github.com/gin-gonic/gin"
 	"go-blog/api"
 	"go-blog/service"
+
+	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
 )
 

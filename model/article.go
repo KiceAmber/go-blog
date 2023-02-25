@@ -2,6 +2,7 @@ package model
 
 import "time"
 
+// Article 模型
 type Article struct {
 	ArticleID  int64     `db:"article_id"`
 	AuthorID   int64     `db:"author_id"`

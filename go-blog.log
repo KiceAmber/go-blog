@@ -1,0 +1,30 @@
+{"level":"DEBUG","time":"2023-02-25T10:26:16.673+0800","caller":"go-blog/main.go:34","msg":"log init success..."}
+{"level":"INFO","time":"2023-02-25T10:26:47.577+0800","caller":"log/log.go:71","msg":"/version1/login","status":200,"method":"GET","path":"/version1/login","query":"","ip":"127.0.0.1","user-agent":"Apifox/1.0.0 (https://www.apifox.cn)","errors":"","cost":0.0035571}
+{"level":"INFO","time":"2023-02-25T10:27:17.452+0800","caller":"log/log.go:71","msg":"/version1/articles","status":200,"method":"GET","path":"/version1/articles","query":"page_num=2&page_size=3","ip":"127.0.0.1","user-agent":"Apifox/1.0.0 (https://www.apifox.cn)","errors":"","cost":0.0015214}
+{"level":"INFO","time":"2023-02-25T10:35:52.226+0800","caller":"log/log.go:71","msg":"/version1/articles","status":200,"method":"GET","path":"/version1/articles","query":"page_num=1&page_size=3","ip":"127.0.0.1","user-agent":"Apifox/1.0.0 (https://www.apifox.cn)","errors":"","cost":0.00175}
+{"level":"DEBUG","time":"2023-02-25T10:38:19.783+0800","caller":"go-blog/main.go:34","msg":"log init success..."}
+{"level":"DEBUG","time":"2023-02-25T10:38:35.640+0800","caller":"go-blog/main.go:34","msg":"log init success..."}
+{"level":"DEBUG","time":"2023-02-25T10:39:20.522+0800","caller":"go-blog/main.go:34","msg":"log init success..."}
+{"level":"DEBUG","time":"2023-02-25T10:39:33.898+0800","caller":"go-blog/main.go:34","msg":"log init success..."}
+{"level":"INFO","time":"2023-02-25T10:45:41.338+0800","caller":"router/router.go:69","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-02-25T10:45:41.339+0800","caller":"router/router.go:78","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-02-25T12:32:51.009+0800","caller":"go-blog/main.go:34","msg":"log init success..."}
+{"level":"INFO","time":"2023-02-25T12:33:16.746+0800","caller":"log/log.go:71","msg":"/version1/articles","status":200,"method":"GET","path":"/version1/articles","query":"page_num=-1&page_size=%E8%80%83%E8%99%91%E8%BF%9B%E6%9D%A5","ip":"127.0.0.1","user-agent":"Apifox/1.0.0 (https://www.apifox.cn)","errors":"","cost":0.0007886}
+{"level":"INFO","time":"2023-02-25T12:33:27.689+0800","caller":"log/log.go:71","msg":"/version1/login","status":200,"method":"GET","path":"/version1/login","query":"","ip":"127.0.0.1","user-agent":"Apifox/1.0.0 (https://www.apifox.cn)","errors":"","cost":0.0010365}
+{"level":"ERROR","time":"2023-02-25T12:33:34.564+0800","caller":"controller/article.go:19","msg":"service.QueryArticleList failed","error":"Error 1690 (22003): signed integer value is out of range in 'mysqld_stmt_execute'"}
+{"level":"INFO","time":"2023-02-25T12:33:34.565+0800","caller":"log/log.go:71","msg":"/version1/articles","status":200,"method":"GET","path":"/version1/articles","query":"page_num=-1&page_size=%E8%80%83%E8%99%91%E8%BF%9B%E6%9D%A5","ip":"127.0.0.1","user-agent":"Apifox/1.0.0 (https://www.apifox.cn)","errors":"","cost":0.0014278}
+{"level":"INFO","time":"2023-02-25T12:33:47.803+0800","caller":"log/log.go:71","msg":"/version1/article","status":200,"method":"POST","path":"/version1/article","query":"","ip":"127.0.0.1","user-agent":"Apifox/1.0.0 (https://www.apifox.cn)","errors":"","cost":0}
+{"level":"DEBUG","time":"2023-02-25T12:34:30.303+0800","caller":"go-blog/main.go:34","msg":"log init success..."}
+{"level":"INFO","time":"2023-02-25T14:31:50.828+0800","caller":"router/router.go:69","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-02-25T14:31:50.829+0800","caller":"router/router.go:78","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-02-25T14:51:29.217+0800","caller":"go-blog/main.go:34","msg":"log init success..."}
+{"level":"INFO","time":"2023-02-25T14:51:34.831+0800","caller":"log/log.go:71","msg":"/version1/article","status":200,"method":"POST","path":"/version1/article","query":"","ip":"127.0.0.1","user-agent":"Apifox/1.0.0 (https://www.apifox.cn)","errors":"","cost":0}
+{"level":"DEBUG","time":"2023-02-25T14:52:40.692+0800","caller":"go-blog/main.go:34","msg":"log init success..."}
+{"level":"INFO","time":"2023-02-25T14:52:43.053+0800","caller":"log/log.go:71","msg":"/version1/article","status":200,"method":"POST","path":"/version1/article","query":"","ip":"127.0.0.1","user-agent":"Apifox/1.0.0 (https://www.apifox.cn)","errors":"","cost":0}
+{"level":"INFO","time":"2023-02-25T14:52:47.108+0800","caller":"log/log.go:71","msg":"/version1/login","status":200,"method":"GET","path":"/version1/login","query":"","ip":"127.0.0.1","user-agent":"Apifox/1.0.0 (https://www.apifox.cn)","errors":"","cost":0.0014991}
+{"level":"INFO","time":"2023-02-25T14:52:58.731+0800","caller":"log/log.go:71","msg":"/version1/article","status":200,"method":"POST","path":"/version1/article","query":"","ip":"127.0.0.1","user-agent":"Apifox/1.0.0 (https://www.apifox.cn)","errors":"","cost":0.0316651}
+{"level":"DEBUG","time":"2023-02-25T14:53:45.454+0800","caller":"go-blog/main.go:34","msg":"log init success..."}
+{"level":"DEBUG","time":"2023-02-25T14:54:13.655+0800","caller":"go-blog/main.go:34","msg":"log init success..."}
+{"level":"DEBUG","time":"2023-02-25T15:13:36.974+0800","caller":"go-blog/main.go:34","msg":"log init success..."}
+{"level":"DEBUG","time":"2023-02-25T15:52:45.271+0800","caller":"go-blog/main.go:34","msg":"log init success..."}
+{"level":"INFO","time":"2023-02-25T15:53:00.633+0800","caller":"log/log.go:71","msg":"/version1/article","status":200,"method":"POST","path":"/version1/article","query":"","ip":"127.0.0.1","user-agent":"Apifox/1.0.0 (https://www.apifox.cn)","errors":"","cost":0.0027778}

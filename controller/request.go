@@ -2,8 +2,9 @@ package controller
 
 import (
 	"errors"
-	"github.com/gin-gonic/gin"
 	"strconv"
+
+	"github.com/gin-gonic/gin"
 )
 
 const CtxUserIDKey = "userID"
@@ -28,8 +29,8 @@ func getCurrentUser(c *gin.Context) (userID int64, err error) {
 
 // 获取分页参数
 func getPageParam(c *gin.Context) (int64, int64) {
-	pageNumStr := c.Query("pageNum")
-	pageSizeStr := c.Query("pageSize")
+	pageNumStr := c.Query("page_num")
+	pageSizeStr := c.Query("page_size")
 
 	pageNum, err := strconv.ParseInt(pageNumStr, 10, 64)
 	if err != nil {
@@ -38,9 +39,8 @@ func getPageParam(c *gin.Context) (int64, int64) {
 
 	pageSize, err := strconv.ParseInt(pageSizeStr, 10, 64)
 	if err != nil {
-		// 默认一页展示10个数据量
-		pageSize = 10
+		// 默认一页展示6个数据量
+		pageSize = 6
 	}
-
 	return pageNum, pageSize
 }
