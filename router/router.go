@@ -33,6 +33,7 @@ func Init() *gin.Engine {
 	{
 		v1.GET("/articles", controller.GetAllArticle)
 		v1.POST("/article", controller.CreateArticle)
+		v1.DELETE("/article/:id", controller.DeleteArticle)
 	}
 
 	// 错误路由

@@ -19,3 +19,8 @@ func CreateArticle(param *api.PostArticle) (err error) {
 	param.ArticleID = ArticleID
 	return mysql.CreateArticle(param)
 }
+
+// DeleteArticle 删除文章
+func DeleteArticle(articleID int64) (err error) {
+	return mysql.DeleteArticle(articleID)
+}

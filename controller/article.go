@@ -3,6 +3,7 @@ package controller
 import (
 	"go-blog/api"
 	"go-blog/service"
+	"strconv"
 
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
@@ -46,7 +47,21 @@ func CreateArticle(c *gin.Context) {
 	RespSuccess(c, nil)
 }
 
-// 删除文章
+// DeleteArticle 删除文章
 func DeleteArticle(c *gin.Context) {
+	articleIDStr := c.Param("id")
+	articleID, err := strconv.ParseInt(articleIDStr, 10, 64)
+	if err != nil {
+		zap.L().Error("deleteArticle with invalid params", zap.Error(err))
+		RespError(c, CodeInvalidParams, nil)
+		return
+	}
 
+	if err := service.DeleteArticle(articleID); err != nil {
+		zap.L().Error("service.DeleteArticle failed", zap.Error(err))
+		RespError(c, CodeServiceBusy, nil)
+		return
+	}
+
+	RespSuccess(c, nil)
 }

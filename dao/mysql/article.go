@@ -15,6 +15,7 @@ func QueryArticleList(pageNum int64, pageSize int64) (articleList []*model.Artic
 	return
 }
 
+// CreateArticle 创建文章
 func CreateArticle(param *api.PostArticle) (err error) {
 	sqlStr := `insert into article(article_id, title, content, cover_image, author_id)
 			   values(?, ?, ?, ?, ?)`
@@ -25,5 +26,13 @@ func CreateArticle(param *api.PostArticle) (err error) {
 		param.CoverImage,
 		param.AuthorID,
 	)
+	return
+}
+
+// DeleteArticle 删除文章
+func DeleteArticle(articleID int64) (err error) {
+	sqlStr := `delete from article
+			   where article_id = ?`
+	_, err = db.Exec(sqlStr, articleID)
 	return
 }
